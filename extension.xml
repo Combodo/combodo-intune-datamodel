@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension format="1.0">
+    <extension_code>combodo-intune-datamodel</extension_code>
+    <version>1.0.0</version>
+    <label><![CDATA[Data model for Microsoft InTune]]></label>
+    <description><![CDATA[Modelization for InTune integration]]></description>
+    <mandatory>false</mandatory>
+    <more_info_url></more_info_url>
+</extension>

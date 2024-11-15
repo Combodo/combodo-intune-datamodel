@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2">
+    <classes>
+        <class id="Model" _created_in="itop-config-mgmt" _delta="must_exist">
+            <fields>
+                <field id="type" xsi:type="AttributeEnum" _delta="must_exist">
+                    <values>
+                        <value id="InTuneUnknown" _delta="define">
+                            <code>InTuneUnknown</code>
+                        </value>
+                    </values>
+                </field>
+            </fields>
+        </class>
+        <class id="MobilePhone" _created_in="itop-config-mgmt" _delta="must_exist">
+            <fields>
+                <field id="intuneid" xsi:type="AttributeString" _delta="define">
+                    <sql>intuneid</sql>
+                    <default_value/>
+                    <is_null_allowed>true</is_null_allowed>
+                    <validation_pattern/>
+                    <tracking_level>all</tracking_level>
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="intuneid" _delta="define">
+                            <rank>165</rank>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="PC" _created_in="itop-config-mgmt" _delta="must_exist">
+            <fields>
+                <field id="intuneid" xsi:type="AttributeString" _delta="define">
+                    <sql>intuneid</sql>
+                    <default_value/>
+                    <is_null_allowed>true</is_null_allowed>
+                    <validation_pattern/>
+                    <tracking_level>all</tracking_level>
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:Server:otherinfo" _delta="must_exist">
+                                    <items>
+                                        <item id="intuneid" _delta="define">
+                                            <rank>20</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Tablet" _created_in="itop-config-mgmt" _delta="must_exist">
+            <fields>
+                <field id="intuneid" xsi:type="AttributeString" _delta="define">
+                    <sql>intuneid</sql>
+                    <default_value/>
+                    <is_null_allowed>true</is_null_allowed>
+                    <validation_pattern/>
+                    <tracking_level>all</tracking_level>
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="intuneid" _delta="define">
+                            <rank>135</rank>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+    </classes>
+</itop_design>
