@@ -43,10 +43,8 @@ SetupWebPage::AddModule(
         //
         'settings' => array(
             'direct_access' => array(
-                'label' => 'InTune',
                 'url' => 'https://intune.microsoft.com/#view/Microsoft_Intune_Devices/DeviceSettingsMenuBlade/~/overview/mdmDeviceId/$intuneid$',
                 'icon' => 'fas fa-cloud-upload-alt',
-                'tooltip' => 'Lookup managed devices directly in InTune',
             ),
         ),
     )
