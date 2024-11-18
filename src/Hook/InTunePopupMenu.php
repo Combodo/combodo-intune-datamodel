@@ -6,6 +6,7 @@
 
 namespace Combodo\iTop\InTune\Hook;
 
+use Dict;
 use iPopupMenuExtension;
 use MetaModel;
 use PhysicalDevice;
@@ -35,15 +36,15 @@ class InTunePopupMenu implements iPopupMenuExtension
                     $sClass = get_class($oObj);
                     if (MetaModel::IsValidAttCode($sClass, 'intuneid')) {
                         $aDirectAccessParams = MetaModel::GetModuleSetting(static::MODULE_NAME, static::DIRECT_ACCESS, array());
-                        if (!empty($aDirectAccessParams) && array_key_exists('label', $aDirectAccessParams) && array_key_exists('url', $aDirectAccessParams)) {
-                            $sLabel = $aDirectAccessParams['label'];
+                        if (!empty($aDirectAccessParams) && array_key_exists('url', $aDirectAccessParams)) {
+                            $sLabel = array_key_exists('label', $aDirectAccessParams) ? $aDirectAccessParams['label'] : Dict::S('UI:InTuneDatamodel:Action:DirectAccess');
                             $sUrl = $aDirectAccessParams['url'];
                             if (($sUrl != '') && ($sLabel != '')) {
                                 // Build URL
                                 $sUrl = str_replace('$intuneid$', $oObj->Get('intuneid'), $sUrl);
 
                                 // Build tooltip
-                                $sTooltip = array_key_exists('tooltip', $aDirectAccessParams) ? $aDirectAccessParams['tooltip'] : '';
+                                $sTooltip = array_key_exists('tooltip', $aDirectAccessParams) ? $aDirectAccessParams['tooltip'] : Dict::S('UI:InTuneDatamodel:Action:DirectAccess+');
 
                                 // Build icon
                                 $sIcon = array_key_exists('icon', $aDirectAccessParams) ? $aDirectAccessParams['icon'] : static::INTUNE_DEFAULT_MENU_ICON;
@@ -52,7 +53,7 @@ class InTunePopupMenu implements iPopupMenuExtension
                                 $sTarget = array_key_exists('target', $aDirectAccessParams) ? $aDirectAccessParams['target'] : '_blank';
 
                                 $oButton = new URLButtonItem('intune_datamodel', $sLabel, $sUrl, $sTarget);
-                                $oButton->SetIconClass('fab fa-github-alt');
+                                $oButton->SetIconClass($sIcon);
                                 $oButton->SetTooltip($sTooltip);
                                 $aResult[] = $oButton;
                             }
