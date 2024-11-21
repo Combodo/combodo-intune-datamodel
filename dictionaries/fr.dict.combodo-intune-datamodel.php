@@ -5,6 +5,10 @@
  */
 
 Dict::Add('FR FR', 'French', 'Français', array(
+    // Model
+    'Class:Model/Attribute:type/Value:InTuneUnknown' => 'Indéterminé - InTune',
+    'Class:Model/Attribute:type/Value:InTuneUnknown+' => 'Le type de ce modèle vu dans InTune est indéterminé',
+
     // MobilePhone
     'Class:MobilePhone/Attribute:intuneid' => 'InTune ID',
     'Class:MobilePhone/Attribute:intuneid+' => 'ID de l\'objet dans InTune',

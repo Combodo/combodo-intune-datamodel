@@ -5,6 +5,10 @@
  */
 
 Dict::Add('EN US', 'English', 'English', array(
+    // Model
+    'Class:Model/Attribute:type/Value:InTuneUnknown' => 'InTune - Unknown',
+    'Class:Model/Attribute:type/Value:InTuneUnknown+' => 'The type of this model seen in InTune is unknown',
+
     // MobilePhone
     'Class:MobilePhone/Attribute:intuneid' => 'InTune ID',
     'Class:MobilePhone/Attribute:intuneid+' => 'InTune object ID',
