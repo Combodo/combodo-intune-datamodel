@@ -40,22 +40,25 @@ class InTunePopupMenu implements iPopupMenuExtension
                             $sLabel = array_key_exists('label', $aDirectAccessParams) ? $aDirectAccessParams['label'] : Dict::S('UI:InTuneDatamodel:Action:DirectAccess');
                             $sUrl = $aDirectAccessParams['url'];
                             if (($sUrl != '') && ($sLabel != '')) {
-                                // Build URL
-                                $sUrl = str_replace('$intuneid$', $oObj->Get('intuneid'), $sUrl);
+                                $sInTuneId = $oObj->Get('intuneid');
+                                if ($sInTuneId != '') {
+                                    // Build URL
+                                    $sUrl = str_replace('$intuneid$', $sInTuneId, $sUrl);
 
-                                // Build tooltip
-                                $sTooltip = array_key_exists('tooltip', $aDirectAccessParams) ? $aDirectAccessParams['tooltip'] : Dict::S('UI:InTuneDatamodel:Action:DirectAccess+');
+                                    // Build tooltip
+                                    $sTooltip = array_key_exists('tooltip', $aDirectAccessParams) ? $aDirectAccessParams['tooltip'] : Dict::S('UI:InTuneDatamodel:Action:DirectAccess+');
 
-                                // Build icon
-                                $sIcon = array_key_exists('icon', $aDirectAccessParams) ? $aDirectAccessParams['icon'] : static::INTUNE_DEFAULT_MENU_ICON;
+                                    // Build icon
+                                    $sIcon = array_key_exists('icon', $aDirectAccessParams) ? $aDirectAccessParams['icon'] : static::INTUNE_DEFAULT_MENU_ICON;
 
-                                // Build target page
-                                $sTarget = array_key_exists('target', $aDirectAccessParams) ? $aDirectAccessParams['target'] : '_blank';
+                                    // Build target page
+                                    $sTarget = array_key_exists('target', $aDirectAccessParams) ? $aDirectAccessParams['target'] : '_blank';
 
-                                $oButton = new URLButtonItem('intune_datamodel', $sLabel, $sUrl, $sTarget);
-                                $oButton->SetIconClass($sIcon);
-                                $oButton->SetTooltip($sTooltip);
-                                $aResult[] = $oButton;
+                                    $oButton = new URLButtonItem('intune_datamodel', $sLabel, $sUrl, $sTarget);
+                                    $oButton->SetIconClass($sIcon);
+                                    $oButton->SetTooltip($sTooltip);
+                                    $aResult[] = $oButton;
+                                }
                             }
                         }
                     }
