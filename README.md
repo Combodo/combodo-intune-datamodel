@@ -3,7 +3,7 @@
 ## About
 
 This extension allows you to integrate Microsoft InTune environments within iTop. It adds to your iTop datamodel a few 
-attributes to iTop classes so that InTune managed devices and iTop objects caneasily be interlinked.
+attributes to iTop classes so that InTune managed devices and iTop objects can easily be interlinked.
 
 For an optimal usage, this extension should be used with the "Data collector for Microsoft InTune" that will automatically and regularly discover InTune
 objects in their environement and load them in iTop. This ETL will insure that your data are always up to date in iTop.
