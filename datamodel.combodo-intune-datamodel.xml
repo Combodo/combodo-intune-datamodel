@@ -45,9 +45,22 @@
             <presentation>
                 <details>
                     <items>
+                        <!-- Compatilibity for <3.3 -->
                         <item id="col:col2" _delta="must_exist">
                             <items>
-                                <item id="fieldset:Server:otherinfo" _delta="must_exist">
+                                <item id="fieldset:Server:otherinfo" _delta="if_exists">
+                                    <items>
+                                        <item id="intuneid" _delta="define">
+                                            <rank>20</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                        <!-- Compatibility for 3.3.x -->
+                        <item id="col:col1" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:Server:moreinfo" _delta="if_exists">
                                     <items>
                                         <item id="intuneid" _delta="define">
                                             <rank>20</rank>
